@@ -32,19 +32,6 @@ transform = transforms.Compose([
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 ])
 
-# def predict(img_path):
-#     img = Image.open(img_path).convert("RGB")
-#     x = transform(img).unsqueeze(0).to(device)  # shape [1,3,224,224]
-#     with torch.no_grad():
-#         outputs = model(x)
-#         pred_idx = outputs.argmax(dim=1).item()
-#         pred_class = classes[pred_idx]
-#     return pred_class
-
-# test_image = root_directory / "test" / "AppleCedarRust1.JPG"  # <- replace with actual filename
-# print("Prediction:", predict(test_image))
-
-
 test_imgs = list(test_directory.glob("*.jpg")) + list(test_directory.glob("*.png"))
 print(f"Found {len(test_imgs)} test images.")
 
